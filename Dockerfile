@@ -22,7 +22,7 @@ RUN apk update && apk upgrade && \
 
 WORKDIR /app
 
-EXPOSE 8001
+EXPOSE 8004
 
 COPY --from=builder /app /app
-ENTRYPOINT [ "/app/field-service" ]
+ENTRYPOINT [ "/app/order-service" ]

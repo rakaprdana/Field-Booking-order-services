@@ -13,7 +13,7 @@ watch: ## Run the service with hot reload
 
 ## Build:
 build: ## Build the service
-	go build -o order-service
+	go build -o order-services
 
 ## Docker:
 docker-compose: ## Start the service in docker
