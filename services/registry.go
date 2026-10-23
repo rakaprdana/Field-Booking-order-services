@@ -20,7 +20,7 @@ type IServiceRegistry interface {
 	GetOrder() services.IOrderService
 }
 
-func NewRegistry(repository repositories.IRepositoryRegistry, client clients.IClientRegistry) IServiceRegistry {
+func NewServiceRegistry(repository repositories.IRepositoryRegistry, client clients.IClientRegistry) IServiceRegistry {
 	return &Registry{
 		repository: repository,
 		client:     client,
