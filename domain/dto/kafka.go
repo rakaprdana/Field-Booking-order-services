@@ -22,14 +22,15 @@ type KafkaData struct {
 	ExpiredAt time.Time  `json:"expiredAt"`
 	PaidAt    *time.Time `json:"paidAt"`
 }
+type DataType string
 
-type KafkaBody struct {
-	Type string     `json:"type"`
-	Data *KafkaData `json:"data"`
+type KafkaBody[T any] struct {
+	Type DataType `json:"type"`
+	Data T        `json:"data"`
 }
 
-type KafkaMessage struct {
+type KafkaMessage[T any] struct {
 	Event    KafkaEvent    `json:"event"`
 	Metadata KafkaMetaData `json:"metadata"`
-	Body     KafkaBody     `json:"body"`
+	Body     KafkaBody[T]  `json:"body"`
 }

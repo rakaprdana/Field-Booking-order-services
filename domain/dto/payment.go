@@ -13,7 +13,7 @@ type PaymentRequest struct {
 	Amount         float64         `json:"amount"`
 	Description    string          `json:"description"`
 	CustomerDetail *CustomerDetail `json:"customerDetail"`
-	ItemDetail     []ItemDetail    `json:"itemDetail"`
+	ItemDetails    []ItemDetail    `json:"itemDetail"`
 }
 
 type CustomerDetail struct {
@@ -23,8 +23,8 @@ type CustomerDetail struct {
 }
 
 type ItemDetail struct {
-	ID       string  `json:"id"`
-	Amount   float64 `json:"amount"`
-	Name     string  `json:"name"`
-	Quantity int     `json:"quantity"`
+	ID       uuid.UUID `json:"id"`
+	Amount   float64   `json:"amount"`
+	Name     string    `json:"name"`
+	Quantity int       `json:"quantity"`
 }
